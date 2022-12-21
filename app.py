@@ -8,10 +8,10 @@ import re
 import nltk
 from rake_nltk import Rake
 
-# nltk.download('stopwords')
-# nltk.download('wordnet')
-# nltk.download('omw-1.4')
-# nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
+nltk.download('omw-1.4')
+nltk.download('punkt')
 
 app = Flask(__name__)
 
