@@ -7,7 +7,7 @@ import plotly.express as px
 import re
 import nltk
 from rake_nltk import Rake
-from nltk.corpus import stopwords
+# from nltk.corpus import stopwords
 
 stop_words = set(stopwords.words('english'))
 
