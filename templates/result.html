@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Keyword Extractor</title>
+    <link rel="icon" type="image/x-icon" href="static/favicon.ico" />
+
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet" />
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="static/styles.css" rel="stylesheet" />
+    <style>
+        html,
+        body {
+            background-image: url('static/bg-masthead.jpg');
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+
+<body id="page-top">
+
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">Keyword Extractor</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">A free tool for extracting keywords out of texts.</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About-->
+    <section class="about-section text-center" id="about">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="text-white mb-4">Trained using Rake-Nltk, Deployed using Flask Server.</h2>
+                    <p class="text-white-50">
+                        Keyword Extractor is a free tool to extract keyword out of documnets built using
+                        <a href="https://github.com/csurfer/rake-nltk">Rake-Nltk.</a>
+                        Just enter your texts in the area below and click on Extract to find all important keywords.
+                    </p>
+                </div>
+            </div>
+            <img class="img-fluid" src="static/keyword-extraction.png" alt="..." />
+        </div>
+    </section>
+
+    <!-- Breif-->
+    <section class="projects-section bg-light" id="projects">
+        <div class="container px-4 px-lg-5">
+            <div class="featured-text text-center text-lg-left">
+                <h4>What is Keyword Extraction?</h4>
+                <p class="text-black-50 mb-0">Keyword extraction (also known as keyword detection or keyword
+                    analysis) is a text analysis technique that automatically extracts the most used and most
+                    important words and expressions from a text. It helps summarize the content of texts and
+                    recognize the main topics discussed.
+
+                    Keyword extraction uses machine learning artificial intelligence (AI) with natural language
+                    processing (NLP) to break down human language so that it can be understood and analyzed by
+                    machines. It's used to find keywords from all manner of text: regular documents and business
+                    reports, social media comments, online forums and reviews, news reports, and more.
+                </p>
+            </div>
+        </div>
+    </section>
+    <br />
+
+    <!-- Result -->
+    <div id='text' style="background-color: rgb(210, 231, 255); padding: 2%;">
+        <h2>The Keywords are highlighted below: </h2>
+        {% for word in user_input %}
+            {% if word is in new_words %}
+                <span style="background-color: rgb(247, 247, 47);">{{word}}</span>
+            {% else %}
+                <span>{{word}}</span>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <div id='chart' class='chart'></div>
+
+    <!-- Contact-->
+    <section class="signup-section" id="signup">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-md-10 col-lg-8 mx-auto text-center">
+                    <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                    <h2 class="text-white mb-5">Contact Us</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts-->
+    <section class="contact-section bg-black">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Address</h4>
+                            <hr class="my-4 mx-auto" />
+                            <div class="small text-black-50">#1/5, Santosh Complex, Armugam Circle,
+                                Basavanagudi, Bangalore - 560004</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-envelope text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Email</h4>
+                            <hr class="my-4 mx-auto" />
+                            <div class="small text-black-50"><a href="#!">info@zummitlabs.com</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Phone</h4>
+                            <hr class="my-4 mx-auto" />
+                            <div class="small text-black-50">+91 99201 32689</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="social d-flex justify-content-center">
+                <a class="mx-2" href="https://twitter.com/ZummitI"><i class="fab fa-twitter"></i></a>
+                <a class="mx-2" href="https://www.facebook.com/Zummitinfolabs/"><i class="fab fa-facebook-f"></i></a>
+                <a class="mx-2" href="https://www.github.com/gurjeet29"><i class="fab fa-github"></i></a>
+                <a class="mx-2" href="https://www.instagram.com/zummitinfolabs/"><i class="fab fa-instagram"></i></a>
+                <a class="mx-2" href="https://www.linkedin.com/company/zummit-infolabs-llp/"><i
+                        class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="footer bg-black small text-center text-white-50">
+        <div class="container px-4 px-lg-5">A project for Zummit Infolabs</div>
+        <div class="container px-4 px-lg-5">2022 Zummit Infolabs. All rights reserved</div>
+    </footer>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+<script type='text/javascript'>
+    var graphs = {{ graphJSON | safe }};
+    Plotly.plot('chart', graphs, {});
+</script>
+{% if scroll %}
+<script>
+    document.getElementById('{{ scroll }}').scrollIntoView();
+</script>
+{% endif %}
+
+</html>
